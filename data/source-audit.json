@@ -1,0 +1,3860 @@
+{
+  "policy": "OBS birinci kaynak; eksik alanlar CRN, gün ve saat eşleştirmesiyle PDF’den tamamlanır. Tam OBS kaydı PDF ile değiştirilmez.",
+  "supplemented": [
+    {
+      "crn": "14726",
+      "code": "ENT 211E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "217D",
+      "pdfPage": 2,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14726",
+      "code": "ENT 211E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "217D",
+      "pdfPage": 2,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14727",
+      "code": "ENT 211E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "217D",
+      "pdfPage": 2,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14727",
+      "code": "ENT 211E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "217D",
+      "pdfPage": 2,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14736",
+      "code": "EUT 319E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "217C",
+      "pdfPage": 2,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14736",
+      "code": "EUT 319E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "217C",
+      "pdfPage": 2,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14737",
+      "code": "EUT 320E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "217E",
+      "pdfPage": 2,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14737",
+      "code": "EUT 320E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "217E",
+      "pdfPage": 2,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "10678",
+      "code": "GSB 313",
+      "day": 4,
+      "start": 840,
+      "end": 1020,
+      "room": "227B",
+      "pdfPage": 3,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12425",
+      "code": "ICM 209E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203A",
+      "pdfPage": 3,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "12425",
+      "code": "ICM 209E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203A",
+      "pdfPage": 3,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "12428",
+      "code": "ICM 209E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203A",
+      "pdfPage": 3,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12428",
+      "code": "ICM 209E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203A",
+      "pdfPage": 3,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14715",
+      "code": "ICM 209E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203A",
+      "pdfPage": 3,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14715",
+      "code": "ICM 209E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203A",
+      "pdfPage": 3,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12435",
+      "code": "ICM 246E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203B",
+      "pdfPage": 3,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "12435",
+      "code": "ICM 246E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203B",
+      "pdfPage": 3,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "12440",
+      "code": "ICM 246E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203B",
+      "pdfPage": 3,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12440",
+      "code": "ICM 246E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203B",
+      "pdfPage": 3,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12448",
+      "code": "ICM 349E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203B",
+      "pdfPage": 3,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "12448",
+      "code": "ICM 349E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203B",
+      "pdfPage": 3,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "12450",
+      "code": "ICM 349E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203B",
+      "pdfPage": 3,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12450",
+      "code": "ICM 349E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203B",
+      "pdfPage": 3,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12454",
+      "code": "ICM 349E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203B",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12212",
+      "code": "ICM 351E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "212",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12471",
+      "code": "ICM 366E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12471",
+      "code": "ICM 366E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14717",
+      "code": "ICM 366E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14717",
+      "code": "ICM 366E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12473",
+      "code": "ICM 449E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12473",
+      "code": "ICM 449E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12474",
+      "code": "ICM 449E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12474",
+      "code": "ICM 449E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12483",
+      "code": "ICM 449E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12483",
+      "code": "ICM 449E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14718",
+      "code": "ICM 449E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14718",
+      "code": "ICM 449E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "13660",
+      "code": "MIM 211",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3407",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13660",
+      "code": "MIM 211",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3407",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13662",
+      "code": "MIM 211",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13662",
+      "code": "MIM 211",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13664",
+      "code": "MIM 211E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3405",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13664",
+      "code": "MIM 211E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3405",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13665",
+      "code": "MIM 211E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3404",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13665",
+      "code": "MIM 211E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3404",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13714",
+      "code": "MIM 211E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13714",
+      "code": "MIM 211E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13715",
+      "code": "MIM 211E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13715",
+      "code": "MIM 211E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13916",
+      "code": "MIM 211E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13916",
+      "code": "MIM 211E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13927",
+      "code": "MIM 211E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI6",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13927",
+      "code": "MIM 211E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI6",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13928",
+      "code": "MIM 211E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13928",
+      "code": "MIM 211E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13929",
+      "code": "MIM 211E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13929",
+      "code": "MIM 211E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13931",
+      "code": "MIM 212",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13931",
+      "code": "MIM 212",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13933",
+      "code": "MIM 212E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3404",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13933",
+      "code": "MIM 212E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3404",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13934",
+      "code": "MIM 212E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13934",
+      "code": "MIM 212E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13935",
+      "code": "MIM 212E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13935",
+      "code": "MIM 212E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13979",
+      "code": "MIM 212E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13979",
+      "code": "MIM 212E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13984",
+      "code": "MIM 253",
+      "day": 0,
+      "start": 630,
+      "end": 750,
+      "room": "215",
+      "pdfPage": 7,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "13985",
+      "code": "MIM 253E",
+      "day": 4,
+      "start": 630,
+      "end": 750,
+      "room": "230",
+      "pdfPage": 7,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "13987",
+      "code": "MIM 271E",
+      "day": 1,
+      "start": 750,
+      "end": 870,
+      "room": "230",
+      "pdfPage": 7,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "13994",
+      "code": "MIM 312",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3401",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13994",
+      "code": "MIM 312",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3401",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13995",
+      "code": "MIM 312",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI5",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13995",
+      "code": "MIM 312",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI5",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13997",
+      "code": "MIM 312",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "333",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13997",
+      "code": "MIM 312",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "333",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14953",
+      "code": "MIM 312",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI4",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14953",
+      "code": "MIM 312",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI4",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13998",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3504",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13998",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3504",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13999",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3503",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13999",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3503",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14000",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3403",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14000",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3403",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14001",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3402",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14001",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3402",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14002",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14002",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14003",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI5",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14003",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI5",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14004",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14004",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14005",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14005",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14007",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3406",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14007",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3406",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14010",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14010",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14013",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14013",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14095",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14095",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14096",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14096",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14097",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14097",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14099",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14099",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14101",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14101",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14103",
+      "code": "MIM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3505",
+      "pdfPage": 7,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14103",
+      "code": "MIM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3505",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14141",
+      "code": "MIM 351E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3504",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14141",
+      "code": "MIM 351E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3504",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14142",
+      "code": "MIM 351E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3402",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14142",
+      "code": "MIM 351E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3402",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14143",
+      "code": "MIM 351E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14143",
+      "code": "MIM 351E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14145",
+      "code": "MIM 351E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI5",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14145",
+      "code": "MIM 351E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI5",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14146",
+      "code": "MIM 351E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14146",
+      "code": "MIM 351E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14147",
+      "code": "MIM 351E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3406",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14147",
+      "code": "MIM 351E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3406",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14148",
+      "code": "MIM 351E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14148",
+      "code": "MIM 351E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14149",
+      "code": "MIM 351E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14149",
+      "code": "MIM 351E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14150",
+      "code": "MIM 351E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14150",
+      "code": "MIM 351E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14151",
+      "code": "MIM 351E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14151",
+      "code": "MIM 351E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14152",
+      "code": "MIM 351E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14152",
+      "code": "MIM 351E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14199",
+      "code": "MIM 4042",
+      "day": 2,
+      "start": 810,
+      "end": 930,
+      "room": "305",
+      "pdfPage": 9,
+      "fields": [
+        "building",
+        "room",
+        "day",
+        "time"
+      ]
+    },
+    {
+      "crn": "14399",
+      "code": "MIM 411",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3401",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14399",
+      "code": "MIM 411",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3401",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14400",
+      "code": "MIM 411",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI5",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14400",
+      "code": "MIM 411",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI5",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14401",
+      "code": "MIM 411",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI4",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14401",
+      "code": "MIM 411",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI4",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14402",
+      "code": "MIM 411",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "333",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14402",
+      "code": "MIM 411",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "333",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14405",
+      "code": "MIM 411E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3403",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14405",
+      "code": "MIM 411E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3403",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14406",
+      "code": "MIM 411E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14406",
+      "code": "MIM 411E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14407",
+      "code": "MIM 411E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14407",
+      "code": "MIM 411E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14408",
+      "code": "MIM 411E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14408",
+      "code": "MIM 411E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14409",
+      "code": "MIM 411E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3505",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14409",
+      "code": "MIM 411E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3505",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "15451",
+      "code": "MIM 411E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3503",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "15451",
+      "code": "MIM 411E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3503",
+      "pdfPage": 8,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14755",
+      "code": "MYZ 306E",
+      "day": 2,
+      "start": 810,
+      "end": 930,
+      "room": "CATI3",
+      "pdfPage": 10,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14857",
+      "code": "MYZ 306E",
+      "day": 2,
+      "start": 810,
+      "end": 930,
+      "room": "CATI1",
+      "pdfPage": 10,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "15069",
+      "code": "MYZ 306E",
+      "day": 2,
+      "start": 810,
+      "end": 930,
+      "room": "CATI3",
+      "pdfPage": 10,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "13924",
+      "code": "SBP 207",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "203A",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13924",
+      "code": "SBP 207",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "203A",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14305",
+      "code": "SBP 207",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "203B",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14305",
+      "code": "SBP 207",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "203B",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "15107",
+      "code": "SBP 207",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "15107",
+      "code": "SBP 207",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "203C",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14306",
+      "code": "SBP 207E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14306",
+      "code": "SBP 207E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "203C",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14307",
+      "code": "SBP 207E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "203A",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14307",
+      "code": "SBP 207E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "203A",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14308",
+      "code": "SBP 207E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "203B",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14308",
+      "code": "SBP 207E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "203B",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "12172",
+      "code": "SBP 218E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "12172",
+      "code": "SBP 218E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "203C",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14338",
+      "code": "SBP 311",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14338",
+      "code": "SBP 311",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "3400",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14339",
+      "code": "SBP 311",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14339",
+      "code": "SBP 311",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "3400",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14340",
+      "code": "SBP 311",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14340",
+      "code": "SBP 311",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "3400",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14341",
+      "code": "SBP 311E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14341",
+      "code": "SBP 311E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "3400",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14342",
+      "code": "SBP 311E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14342",
+      "code": "SBP 311E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "3400",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14343",
+      "code": "SBP 311E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14343",
+      "code": "SBP 311E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "3400",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14344",
+      "code": "SBP 312E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI5",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14344",
+      "code": "SBP 312E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "CATI5",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14349",
+      "code": "SBP 411",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14349",
+      "code": "SBP 411",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "CATI1",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14350",
+      "code": "SBP 411",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI1",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14350",
+      "code": "SBP 411",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "CATI1",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14351",
+      "code": "SBP 411",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14351",
+      "code": "SBP 411",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "CATI2",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14352",
+      "code": "SBP 411",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI2",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14352",
+      "code": "SBP 411",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "CATI2",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14353",
+      "code": "SBP 411E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14353",
+      "code": "SBP 411E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "CATI3",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14354",
+      "code": "SBP 411E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI3",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14354",
+      "code": "SBP 411E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "CATI3",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14355",
+      "code": "SBP 411E",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI4",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "14355",
+      "code": "SBP 411E",
+      "day": 4,
+      "start": 840,
+      "end": 1080,
+      "room": "CATI4",
+      "pdfPage": 13,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "12689",
+      "code": "PEM 209E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "217D",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12689",
+      "code": "PEM 209E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "217D",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12692",
+      "code": "PEM 311E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "212",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12692",
+      "code": "PEM 311E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "212",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12693",
+      "code": "PEM 311E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "212",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12693",
+      "code": "PEM 311E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "212",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12694",
+      "code": "PEM 311E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "212",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12694",
+      "code": "PEM 311E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "212",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12700",
+      "code": "PEM 312E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "217C",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12700",
+      "code": "PEM 312E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "217C",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12697",
+      "code": "PEM 411E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "214",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12697",
+      "code": "PEM 411E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "214",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12698",
+      "code": "PEM 411E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "214",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12698",
+      "code": "PEM 411E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "214",
+      "pdfPage": 11,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12669",
+      "code": "TES 111E",
+      "day": 0,
+      "start": 510,
+      "end": 750,
+      "room": "214",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12669",
+      "code": "TES 111E",
+      "day": 3,
+      "start": 510,
+      "end": 750,
+      "room": "214",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12671",
+      "code": "TES 111E",
+      "day": 0,
+      "start": 510,
+      "end": 750,
+      "room": "214",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12671",
+      "code": "TES 111E",
+      "day": 3,
+      "start": 510,
+      "end": 750,
+      "room": "214",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14473",
+      "code": "TES 111E",
+      "day": 0,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14473",
+      "code": "TES 111E",
+      "day": 3,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14474",
+      "code": "TES 111E",
+      "day": 0,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14474",
+      "code": "TES 111E",
+      "day": 3,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14475",
+      "code": "TES 111E",
+      "day": 0,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14475",
+      "code": "TES 111E",
+      "day": 3,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14476",
+      "code": "TES 111E",
+      "day": 0,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14476",
+      "code": "TES 111E",
+      "day": 3,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14710",
+      "code": "TES 111E",
+      "day": 0,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14710",
+      "code": "TES 111E",
+      "day": 3,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14719",
+      "code": "TES 111E",
+      "day": 0,
+      "start": 510,
+      "end": 750,
+      "room": "212",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14719",
+      "code": "TES 111E",
+      "day": 3,
+      "start": 510,
+      "end": 750,
+      "room": "212",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "15522",
+      "code": "TES 111E",
+      "day": 0,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "15522",
+      "code": "TES 111E",
+      "day": 3,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "15682",
+      "code": "TES 111E",
+      "day": 0,
+      "start": 510,
+      "end": 750,
+      "room": "214",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "15682",
+      "code": "TES 111E",
+      "day": 3,
+      "start": 510,
+      "end": 750,
+      "room": "214",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "13919",
+      "code": "TES 112E",
+      "day": 4,
+      "start": 510,
+      "end": 750,
+      "room": "CATI1",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "13920",
+      "code": "TES 112E",
+      "day": 4,
+      "start": 510,
+      "end": 750,
+      "room": "CATI2",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14478",
+      "code": "TES 112E",
+      "day": 4,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14479",
+      "code": "TES 112E",
+      "day": 4,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14480",
+      "code": "TES 112E",
+      "day": 4,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14481",
+      "code": "TES 112E",
+      "day": 4,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14482",
+      "code": "TES 112E",
+      "day": 4,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14486",
+      "code": "TES 112E",
+      "day": 4,
+      "start": 510,
+      "end": 750,
+      "room": "212",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "13921",
+      "code": "TES 113E",
+      "day": 2,
+      "start": 510,
+      "end": 750,
+      "room": "CATI1",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14484",
+      "code": "TES 113E",
+      "day": 2,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "14485",
+      "code": "TES 113E",
+      "day": 2,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 15,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "15169",
+      "code": "TES 113E",
+      "day": 2,
+      "start": 510,
+      "end": 750,
+      "room": "3400",
+      "pdfPage": 16,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "13147",
+      "code": "BPL 525E",
+      "day": 1,
+      "start": 570,
+      "end": 750,
+      "room": "134",
+      "pdfPage": 1,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "13433",
+      "code": "CKY 549",
+      "day": 2,
+      "start": 570,
+      "end": 750,
+      "room": "131",
+      "pdfPage": 1,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13083",
+      "code": "GGP 596E",
+      "day": 3,
+      "start": 960,
+      "end": 1080,
+      "room": "106",
+      "pdfPage": 3,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "12744",
+      "code": "MBL 549E",
+      "day": 1,
+      "start": 570,
+      "end": 750,
+      "room": "123A",
+      "pdfPage": 5,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13070",
+      "code": "PEM 613E",
+      "day": 1,
+      "start": 810,
+      "end": 990,
+      "room": "123A",
+      "pdfPage": 11,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13259",
+      "code": "PYY 502",
+      "day": 3,
+      "start": 810,
+      "end": 990,
+      "room": "123A",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13836",
+      "code": "RST 509",
+      "day": 2,
+      "start": 570,
+      "end": 750,
+      "room": "D380",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13840",
+      "code": "RST 609E",
+      "day": 3,
+      "start": 570,
+      "end": 750,
+      "room": "D380",
+      "pdfPage": 12,
+      "fields": [
+        "building",
+        "room"
+      ]
+    },
+    {
+      "crn": "13124",
+      "code": "SBP 625",
+      "day": 1,
+      "start": 570,
+      "end": 750,
+      "room": "131",
+      "pdfPage": 13,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "13132",
+      "code": "SBP 636",
+      "day": 0,
+      "start": 570,
+      "end": 750,
+      "room": "D380",
+      "pdfPage": 13,
+      "fields": [
+        "room"
+      ]
+    },
+    {
+      "crn": "12754",
+      "code": "YAB 625E",
+      "day": 3,
+      "start": 630,
+      "end": 810,
+      "room": "3501",
+      "pdfPage": 16,
+      "fields": [
+        "building",
+        "room"
+      ]
+    }
+  ],
+  "pdfOnly": [
+    {
+      "crn": "13149",
+      "code": "BPL 509",
+      "day": 3,
+      "start": 570,
+      "end": 750,
+      "room": "119B",
+      "pdfPage": 1
+    },
+    {
+      "crn": "13150",
+      "code": "BPL 527E",
+      "day": 4,
+      "start": 570,
+      "end": 750,
+      "room": "131",
+      "pdfPage": 1
+    },
+    {
+      "crn": "13143",
+      "code": "BPL 531",
+      "day": 0,
+      "start": 810,
+      "end": 990,
+      "room": "119A",
+      "pdfPage": 1
+    },
+    {
+      "crn": "13144",
+      "code": "BPL 596",
+      "day": 3,
+      "start": 630,
+      "end": 750,
+      "room": "3506",
+      "pdfPage": 1
+    },
+    {
+      "crn": "12208",
+      "code": "ICM 215",
+      "day": 4,
+      "start": 840,
+      "end": 1020,
+      "room": "317",
+      "pdfPage": 3
+    },
+    {
+      "crn": "12277",
+      "code": "ICM 217E",
+      "day": 2,
+      "start": 750,
+      "end": 930,
+      "room": "315",
+      "pdfPage": 3
+    },
+    {
+      "crn": "12459",
+      "code": "ICM 366E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4
+    },
+    {
+      "crn": "12459",
+      "code": "ICM 366E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4
+    },
+    {
+      "crn": "12470",
+      "code": "ICM 366E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4
+    },
+    {
+      "crn": "12470",
+      "code": "ICM 366E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "203C",
+      "pdfPage": 4
+    },
+    {
+      "crn": "12615",
+      "code": "IMT 501E",
+      "day": 0,
+      "start": 510,
+      "end": 750,
+      "room": "3505",
+      "pdfPage": 4
+    },
+    {
+      "crn": "12615",
+      "code": "IMT 501E",
+      "day": 4,
+      "start": 510,
+      "end": 750,
+      "room": "123A",
+      "pdfPage": 4
+    },
+    {
+      "crn": "12616",
+      "code": "IMT 502",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "216A",
+      "pdfPage": 4
+    },
+    {
+      "crn": "12618",
+      "code": "IMT 503",
+      "day": 0,
+      "start": 810,
+      "end": 990,
+      "room": "123B",
+      "pdfPage": 4
+    },
+    {
+      "crn": "12619",
+      "code": "IMT 504E",
+      "day": 3,
+      "start": 570,
+      "end": 750,
+      "room": "134",
+      "pdfPage": 4
+    },
+    {
+      "crn": "13381",
+      "code": "KET 506E",
+      "day": 0,
+      "start": 810,
+      "end": 990,
+      "room": "119B",
+      "pdfPage": 5
+    },
+    {
+      "crn": "13379",
+      "code": "KET 522",
+      "day": 4,
+      "start": 570,
+      "end": 750,
+      "room": "313",
+      "pdfPage": 5
+    },
+    {
+      "crn": "13604",
+      "code": "MIM 119E",
+      "day": 2,
+      "start": 750,
+      "end": 930,
+      "room": "313",
+      "pdfPage": 5
+    },
+    {
+      "crn": "13930",
+      "code": "MIM 212",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3407",
+      "pdfPage": 6
+    },
+    {
+      "crn": "13930",
+      "code": "MIM 212",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3407",
+      "pdfPage": 6
+    },
+    {
+      "crn": "13932",
+      "code": "MIM 212E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3405",
+      "pdfPage": 6
+    },
+    {
+      "crn": "13932",
+      "code": "MIM 212E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3405",
+      "pdfPage": 6
+    },
+    {
+      "crn": "13936",
+      "code": "MIM 212E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6
+    },
+    {
+      "crn": "13936",
+      "code": "MIM 212E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "3400",
+      "pdfPage": 6
+    },
+    {
+      "crn": "13937",
+      "code": "MIM 212E",
+      "day": 0,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI6",
+      "pdfPage": 6
+    },
+    {
+      "crn": "13937",
+      "code": "MIM 212E",
+      "day": 3,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI6",
+      "pdfPage": 6
+    },
+    {
+      "crn": "13986",
+      "code": "MIM 271",
+      "day": 4,
+      "start": 630,
+      "end": 750,
+      "room": "229",
+      "pdfPage": 7
+    },
+    {
+      "crn": "14153",
+      "code": "MIM 358",
+      "day": 1,
+      "start": 810,
+      "end": 990,
+      "room": "319",
+      "pdfPage": 8
+    },
+    {
+      "crn": "14462",
+      "code": "MIM 484",
+      "day": 1,
+      "start": 810,
+      "end": 1050,
+      "room": "CATI6",
+      "pdfPage": 9
+    },
+    {
+      "crn": "14462",
+      "code": "MIM 484",
+      "day": 4,
+      "start": 510,
+      "end": 750,
+      "room": "CATI6",
+      "pdfPage": 9
+    },
+    {
+      "crn": "14188",
+      "code": "MIM 4022",
+      "day": 1,
+      "start": 570,
+      "end": 750,
+      "room": "313",
+      "pdfPage": 9
+    },
+    {
+      "crn": "14180",
+      "code": "MIM 4024",
+      "day": 2,
+      "start": 810,
+      "end": 930,
+      "room": "309",
+      "pdfPage": 9
+    },
+    {
+      "crn": "14182",
+      "code": "MIM 4032",
+      "day": 4,
+      "start": 870,
+      "end": 990,
+      "room": "303",
+      "pdfPage": 9
+    },
+    {
+      "crn": "14397",
+      "code": "MIM 4066E",
+      "day": 2,
+      "start": 570,
+      "end": 690,
+      "room": "303",
+      "pdfPage": 9
+    },
+    {
+      "crn": "12703",
+      "code": "PEM 492E",
+      "day": 4,
+      "start": 510,
+      "end": 750,
+      "room": "3504",
+      "pdfPage": 11
+    },
+    {
+      "crn": "12703",
+      "code": "PEM 492E",
+      "day": 4,
+      "start": 840,
+      "end": 1020,
+      "room": "3504",
+      "pdfPage": 11
+    },
+    {
+      "crn": "13073",
+      "code": "PEM 697",
+      "day": 2,
+      "start": 810,
+      "end": 1050,
+      "room": "D380",
+      "pdfPage": 11
+    },
+    {
+      "crn": "14348",
+      "code": "SBP 327E",
+      "day": 0,
+      "start": 570,
+      "end": 750,
+      "room": "231",
+      "pdfPage": 13
+    },
+    {
+      "crn": "13125",
+      "code": "SBP 603",
+      "day": 1,
+      "start": 570,
+      "end": 750,
+      "room": "123B",
+      "pdfPage": 13
+    },
+    {
+      "crn": "13126",
+      "code": "SBP 609E",
+      "day": 0,
+      "start": 570,
+      "end": 750,
+      "room": "131",
+      "pdfPage": 13
+    },
+    {
+      "crn": "13129",
+      "code": "SBP 613E",
+      "day": 1,
+      "start": 810,
+      "end": 990,
+      "room": "123B",
+      "pdfPage": 13
+    },
+    {
+      "crn": "13133",
+      "code": "SBP 628",
+      "day": 1,
+      "start": 570,
+      "end": 750,
+      "room": "136B",
+      "pdfPage": 13
+    },
+    {
+      "crn": "14989",
+      "code": "SBP 4025E",
+      "day": 2,
+      "start": 630,
+      "end": 750,
+      "room": "309",
+      "pdfPage": 13
+    },
+    {
+      "crn": "13139",
+      "code": "SPL 504",
+      "day": 2,
+      "start": 810,
+      "end": 990,
+      "room": "3506",
+      "pdfPage": 14
+    },
+    {
+      "crn": "12755",
+      "code": "YAB 615E",
+      "day": 1,
+      "start": 570,
+      "end": 750,
+      "room": "3501",
+      "pdfPage": 16
+    }
+  ],
+  "conflicts": [
+    {
+      "crn": "13148",
+      "code": "BPL 523E",
+      "day": 3,
+      "start": 810,
+      "obsRoom": "STÜDYO",
+      "pdfRoom": "131",
+      "pdfPage": 1,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "14728",
+      "code": "ENT 213E",
+      "day": 0,
+      "start": 570,
+      "obsRoom": "STÜDYO",
+      "pdfRoom": "EUT STÜDYO",
+      "pdfPage": 2,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "14729",
+      "code": "ENT 213E",
+      "day": 0,
+      "start": 810,
+      "obsRoom": "STÜDYO",
+      "pdfRoom": "EUT STÜDYO",
+      "pdfPage": 2,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "14739",
+      "code": "ENT 339E",
+      "day": 4,
+      "start": 570,
+      "obsRoom": "303",
+      "pdfRoom": "309",
+      "pdfPage": 2,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "13163",
+      "code": "EUT 501E",
+      "day": 2,
+      "start": 570,
+      "obsRoom": "131",
+      "pdfRoom": "123B",
+      "pdfPage": 2,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "13165",
+      "code": "EUT 512E",
+      "day": 4,
+      "start": 570,
+      "obsRoom": "3506",
+      "pdfRoom": "134",
+      "pdfPage": 2,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "13169",
+      "code": "EUT 512E",
+      "day": 4,
+      "start": 570,
+      "obsRoom": "309",
+      "pdfRoom": "303",
+      "pdfPage": 2,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "13164",
+      "code": "EUT 561E",
+      "day": 1,
+      "start": 570,
+      "obsRoom": "131",
+      "pdfRoom": "309",
+      "pdfPage": 3,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "13170",
+      "code": "EUT 563E",
+      "day": 1,
+      "start": 570,
+      "obsRoom": "3502",
+      "pdfRoom": "D380",
+      "pdfPage": 3,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "12454",
+      "code": "ICM 349E",
+      "day": 0,
+      "start": 810,
+      "obsRoom": "3501",
+      "pdfRoom": "203B",
+      "pdfPage": 3,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "15666",
+      "code": "ITB 236",
+      "day": 3,
+      "start": 810,
+      "obsRoom": "106",
+      "pdfRoom": "319",
+      "pdfPage": 5,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "15667",
+      "code": "ITB 236",
+      "day": 4,
+      "start": 870,
+      "pdfRoom": "309",
+      "pdfPage": 5,
+      "decision": "OBS gün/saat veya bina bilgisi farklı; PDF oturumu eklenmedi"
+    },
+    {
+      "crn": "13643",
+      "code": "MIM 208",
+      "day": 4,
+      "start": 630,
+      "obsRoom": "215",
+      "pdfRoom": "229",
+      "pdfPage": 6,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "14208",
+      "code": "MIM 4056E",
+      "day": 1,
+      "start": 810,
+      "obsRoom": "CATI5",
+      "pdfRoom": "214",
+      "pdfPage": 9,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "15655",
+      "code": "MTS 615E",
+      "day": 0,
+      "start": 810,
+      "obsRoom": "136B",
+      "pdfRoom": "319",
+      "pdfPage": 10,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "12999",
+      "code": "STR 502E",
+      "day": 3,
+      "start": 870,
+      "obsRoom": "123A",
+      "pdfRoom": "315",
+      "pdfPage": 14,
+      "decision": "OBS korundu"
+    },
+    {
+      "crn": "13000",
+      "code": "STR 504",
+      "day": 1,
+      "start": 570,
+      "obsRoom": "123A",
+      "pdfRoom": "3502",
+      "pdfPage": 14,
+      "decision": "OBS korundu"
+    }
+  ],
+  "pdfExtractionIssues": [
+    {
+      "page": 5,
+      "crn": "15083",
+      "code": "MIM 109",
+      "day": "Çarşamba",
+      "hours": "09:30–12:29",
+      "room": "",
+      "reason": "meeting"
+    },
+    {
+      "page": 5,
+      "crn": "13567",
+      "code": "MIM 114E",
+      "day": "Salı",
+      "hours": "12:30–14:29",
+      "room": "",
+      "reason": "meeting"
+    }
+  ]
+}
