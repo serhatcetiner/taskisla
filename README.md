@@ -4,11 +4,11 @@
 
 ## Kullanım
 
-1. Proje / grup ödevi, tek başına odaklanma veya acil teslim seç.
+1. Açılışta hiçbir amaç seçili değildir; seçimlerin altında güncel çatı haritası görünür. Proje / grup ödevi, tek başına odaklanma veya acil teslim seçince gün/saat bölümü açılır.
 2. Haftanın gününü ve başlangıç saatini seç. Tarih ve bitiş saati girişi kaldırıldı.
-3. 30 dakika, 1, 2, 4 veya 8 saat seç. Acil teslim 30 dakikaya sabitlenir.
+3. Süreler 8, 4, 2, 1 saat ve 30 dakika sırasındadır. Proje/bireysel çalışma için hiçbir süre otomatik seçilmez. 4 saatin kesik kenarlığı ve küçük Önerilen etiketi yalnızca bir öneridir; gerçek seçimin koyu dolgulu görünümü ayrıdır. Süreye tıklanana kadar derslik önerileri ve sonuç listesi açılmaz. Acil teslimde yalnızca seçili 30 dakika düğmesi görünür. Amaç değişince süre seçimi sıfırlanır.
 4. İlk öneri seçtiğin aralığın tamamında programda boş olan en yüksek öncelikli yerdir.
-5. “Bu derslik dolu!” aynı aramada bu odayı atlayıp sıradaki uygun yeri gösterir. Kalıcı veya ortak doluluk bildirimi oluşturmaz. Gün, başlangıç, süre veya çalışma amacı değişince atlanan odalar sıfırlanır. Tüm öneriler tükenirse yeniden gösterme düğmesi çıkar.
+5. “Bu derslik dolu! Başka derslik bul.” aynı aramada bu odayı atlayıp sıradaki uygun yeri gösterir. Kalıcı veya ortak doluluk bildirimi oluşturmaz. Gün, başlangıç, süre veya çalışma amacı değişince atlanan odalar sıfırlanır. Tüm öneriler tükenirse yeniden gösterme düğmesi çıkar.
 
 Öneriler 08.00–22.00 içinde kalmalıdır. Süre kapanışı aşıyorsa başka saat/süre seçilir; sessizce kısaltılmaz. Programda kayıtlı bir dersle çakışan oda önerilmez. Öğle arasına iki ders arasında sıkışan odalar da çalışma önerisine alınmaz. Çalışmanın öğle arasını da içerebildiği daha uzun gerçek boşluklar kullanılabilir.
 
@@ -20,7 +20,7 @@ Bireysel çalışmada üç haneli 300'lü odalar (333 dahil, 380 hariç) ilk sı
 
 3400 haritada ve tüm odalar listesinde görülebilir ama hiçbir çalışma önerisine girmez. SER-ATELYE ve 227B daima taralıdır ve çalışma önerileri/listesinden çıkarılır. OBS eşleşmesi olmayan alanlar boş sayılmaz.
 
-106, 107, 126, 127, 229, 230, 231, 227, 215, 216 haritada küçük AMFİ etiketi taşır. Varsayılan kat çatı katıdır. 380, OBS'deki D380 kodunun gösterimidir.
+106, 107, 126, 127, 229, 230, 231, 227, 215, 216 haritada küçük AMFİ etiketi taşır. Varsayılan kat çatı katıdır.
 
 ## Renk hesabı
 
@@ -33,3 +33,9 @@ Bireysel çalışmada üç haneli 300'lü odalar (333 dahil, 380 hariç) ilk sı
 Hafta içi 12.30–13.30, cuma 12.30–14.00 aralığının içine tamamen sığan boşluklar, dolu odanın rengini pembeye çevirmez. Gün sonundaki 60 dakika veya daha kısa boşluk da pembe üretmez. Renk değerlendirme sonu pazartesi–perşembe 17.30, cuma 18.00; gerçek geç ders varsa son geç dersin bitişidir. 22.00'ye kadar binanın açık olması tek başına pembe üretmez. Gerçek hafta sonu/akşam dersleri korunur.
 
 Öğle arasında gerçekten boş oda dolu gösterilmez: yeşil kalır; ayrıntıda kısa öğle arası olduğu belirtilir. Salı 305 örneği: 11.00 kırmızı, 13.00 açık yeşil, 15.00 kırmızı. Renkler başlangıç anını, öneriler ve kart listesi seçilen sürenin tamamını değerlendirir.
+
+Ders ayrıntısında o anki dersin adı ve kodu gösterilir. Tarihli uzun açıklama ve oturumların kaynak etiketleri kaldırıldı; veri kaynağı ayrıntıları “Veri ve kapsam” ekranında ve denetim dosyasında tutulur.
+
+## Haritada önerilen yeri bul
+
+Açık yeşil Haritada Gör düğmesi doğru katı seçer ve odanın konumuna kaydırır. Önerilen oda mevcut doluluk rengini koruyarak turuncu dış çerçeveyle vurgulanır. Bu düğme program penceresini açmaz; oda kutusuna tıklamak veya oda odaktayken Enter/boşluk tuşuna basmak haftalık programı açar. Açık pembe Bu derslik dolu! Başka derslik bul. düğmesi sıradaki uygun öneriye geçer ve önceki vurguyu kaldırır. Arama ölçütleri değişince vurgu sıfırlanır. Konumu henüz şemada olmayan bir derslik için harita düğmesi devre dışıdır.

@@ -7,7 +7,8 @@ const escape = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'
 let data, filter = 'free', favorites = new Set(), selectedRoom;
 let planZoom = 1;
 let floor = FLOORS[2];
-let selectedDay, duration = 60, purpose = 'project', rejected = new Set(), recommendedRoom;
+let highlightedRoom = null;
+let selectedDay, duration = null, purpose = null, rejected = new Set(), recommendedRoom;
 try { const saved = JSON.parse(localStorage.getItem('taskisla-favorites') || '[]'); if (Array.isArray(saved)) favorites = new Set(saved.filter(x => typeof x === 'string')); } catch {}
 function setStart(value) {
   if (![...$('start').options].some(o=>o.value===value)) $('start').add(new Option(value,value));
@@ -16,12 +17,12 @@ function setStart(value) {
 function setNow() {
   const now=istanbulNow(); selectedDay=dayOfDate(now.date); setStart(now.time);
 }
-function range() { const start=minutes($('start').value); return {day:selectedDay,start,end:start+duration}; }
+function range() { const start=minutes($('start').value); return {day:selectedDay,start,end:start+(duration??60)}; }
 function usableRange(start,end){return validRange(start,end)&&start>=480&&end<=1320;}
 function renderDays() {
   $('days').innerHTML=DAYS.map((name,index)=>`<button data-day="${index}" aria-pressed="${index===selectedDay}">${name}</button>`).join('');
 }
-function resetSearch(){rejected.clear();render();}
+function resetSearch(){rejected.clear();highlightedRoom=null;render();}
 function renderRecommendation() {
   const {day,start,end}=range();
   const candidates=recommendations(data,day,start,end,purpose,rejected);
@@ -30,20 +31,20 @@ function renderRecommendation() {
   if(!recommendedRoom){target.innerHTML=`<p class="eyebrow">SANA UYGUN BİR YER</p><h2>${rejected.size?'Sıradaki uygun yer kalmadı.':'Bu süreye uygun bir yer bulamadık.'}</h2><p>Başlangıcı veya çalışma süresini değiştirebilirsin.</p>${rejected.size?'<button id="retry-rooms" class="now-button">Atladığım derslikleri yeniden göster</button>':''}`;return;}
   const room=recommendedRoom;
   const mappedFloor=FLOORS.find(f=>f.rooms.some(r=>r.id===room));
-  target.innerHTML=`<div><p class="eyebrow">SANA UYGUN BİR YER</p><h2>${escape(displayRoom(room))} <span>${AMPHITHEATRES.includes(room)?'Amfi':mappedFloor?.name||'Derslik'}</span></h2><p>${DAYS[day]} · ${clock(start)}–${clock(end)} boyunca programda boş.</p></div><div class="recommendation-actions"><button id="see-recommended">Haritada ve programda gör ↗</button><button id="reject-room">Bu derslik dolu! →</button></div>`;
+  target.innerHTML=`<div><p class="eyebrow">SANA UYGUN BİR YER</p><h2>${escape(displayRoom(room))} <span>${AMPHITHEATRES.includes(room)?'Amfi':mappedFloor?.name||'Derslik'}</span></h2><p>${DAYS[day]} · ${clock(start)}–${clock(end)} boyunca programda boş.</p></div><div class="recommendation-actions"><button id="see-recommended" ${mappedFloor?'':'disabled title="Bu derslik henüz haritada yok"'}>Haritada Gör ↗</button><button id="reject-room">Bu derslik dolu! Başka derslik bul.</button></div>`;
 }
 function kind(room) { if(AMPHITHEATRES.includes(room))return 'AMFİ'; return /^\d/.test(room) || /^D\d/.test(room) ? 'DERSLİK' : 'STÜDYO / ÖZEL ALAN'; }
 function renderPlan() {
   if (!data) return;
   const {day,start,end} = range();
-  const valid = Number.isInteger(day) && validRange(start,end);
+  const valid = Number.isInteger(day) && Number.isInteger(start) && start>=0 && start<1440;
   $('plan-body').hidden = !valid;
   $('plan-invalid').hidden = Boolean(valid);
   if (!valid) return;
   const states = floor.rooms.map(r=>({...r,state:availability(data.events,data.rooms,r.id,day,start)}));
   $('plan-title').textContent=`${floor.name} planı`;
   const counts = states.reduce((a,r)=>{a[r.state.key]=(a[r.state.key]||0)+1;return a;},{});
-  $('plan-time').textContent = `${DAYS[day]} · ${clock(start)}`;
+  $('plan-time').textContent = `${DAYS[day]} · ${clock(start)}${floor.rooms.some(r=>r.id===highlightedRoom)?' · Önerilen: '+displayRoom(highlightedRoom):''}`;
   $('plan-time-output').textContent = clock(start);
   $('plan-slider').value = Math.max(480,Math.min(1320,start));
   $('plan-summary').textContent = start>=1320 ? '22.00 kapanış sınırının dışındasın.' : `${(counts.light||0)+(counts.dark||0)} derslik şu an programda boş · ${(counts.red||0)+(counts.pink||0)} derslikte ders var · ${counts.unknown||0} alanda veri yok${counts.blocked?' · '+counts.blocked+' alan ders çalışmaya kapalı':''}`;
@@ -63,8 +64,10 @@ function renderPlan() {
     ${floor.entrance?'<text x="596" y="780" class="hall-label">↑ BİNA GİRİŞİ</text>':''}
     ${states.map(r=>{
       const s=r.state;
-      const aria=`${r.label||r.id}: ${s.name}${s.next ? ', sonraki ders '+clock(s.next.start):''}`;
-      return `<g role="button" tabindex="0" class="map-room ${s.key}" data-room="${escape(r.id)}" aria-label="${escape(aria)}"><title>${escape(aria)}. Ayrıntıları aç.</title>${box(r,'room-shape')}${['unknown','blocked'].includes(s.key)?box(r,'room-hatch','aria-hidden="true"'):''}${text({...r,y:r.y-(AMPHITHEATRES.includes(r.id)?8:0)},r.label||r.id,r.small?'room-label small-label':'room-label')}${AMPHITHEATRES.includes(r.id)?text({...r,y:r.y+13},'AMFİ','amphi-label'):''}</g>`;
+      const highlighted=r.id===highlightedRoom;
+      const aria=`${r.label||r.id}: ${s.name}${s.next ? ', sonraki ders '+clock(s.next.start):''}${highlighted?', önerilen derslik':''}`;
+      const ring={...r,x:r.x-4,y:r.y-4,w:r.w+8,h:r.h+8};
+      return `<g role="button" tabindex="0" class="map-room ${s.key}${highlighted?' recommended-room':''}" data-room="${escape(r.id)}" aria-current="${highlighted}" aria-label="${escape(aria)}"><title>${escape(aria)}. Ayrıntıları aç.</title>${highlighted?box(ring,'target-ring-back')+box(ring,'target-ring'):''}${box(r,'room-shape')}${['unknown','blocked'].includes(s.key)?box(r,'room-hatch','aria-hidden="true"'):''}${text({...r,y:r.y-(AMPHITHEATRES.includes(r.id)?8:0)},r.label||r.id,r.small?'room-label small-label':'room-label')}${AMPHITHEATRES.includes(r.id)?text({...r,y:r.y+13},'AMFİ','amphi-label'):''}</g>`;
     }).join('')}`;
 }
 function timeline(meetings, start, end) {
@@ -74,18 +77,28 @@ function timeline(meetings, start, end) {
 }
 function render() {
   renderDays();
-  if (!data) return;
-  const {day, start, end} = range();
-  const valid = Number.isInteger(day) && usableRange(start, end);
-  $('input-error').hidden = Boolean(valid);
-  $('input-error').textContent = 'Çalışma aralığını 08.00–22.00 içinde seç. Bu süre kapanış saatini aşıyor olabilir.';
-  document.querySelectorAll('#presets button').forEach(b => b.setAttribute('aria-pressed', String(end - start === Number(b.dataset.min))));
-  document.querySelectorAll('#filters button').forEach(b => b.setAttribute('aria-pressed', String(filter === b.dataset.filter)));
-  renderPlan();
-  renderRecommendation();
-  $('range-summary').textContent=`${DAYS[day]} · ${clock(start)}${end<=1440?'–'+clock(end):' · '+duration/60+' saat, kapanışı aşıyor'}${purpose==='urgent'?' · Acil teslim için 30 dakika':''}`;
+  const ready=Boolean(purpose)&&duration!==null;
+  $('finder').hidden=!purpose;
+  $('recommendation').hidden=!ready;
+  $('results-section').hidden=!ready;
+  $('notice').hidden=true;
   document.querySelectorAll('#purposes button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.purpose===purpose)));
-  document.querySelectorAll('#presets button').forEach(b=>b.disabled=purpose==='urgent' && b.dataset.min!=='30');
+  document.querySelectorAll('#presets button').forEach(b=>{
+    b.hidden=purpose==='urgent'&&b.dataset.min!=='30';
+    b.disabled=false;
+    b.setAttribute('aria-pressed',String(duration===Number(b.dataset.min)));
+  });
+  const {day,start,end}=range();
+  $('range-summary').textContent=duration===null ? 'Ne kadar çalışacağını seç.' : `${DAYS[day]} · ${clock(start)}${end<=1440?'–'+clock(end):' · '+duration/60+' saat, kapanışı aşıyor'}${purpose==='urgent'?' · Acil teslim için 30 dakika':''}`;
+  $('input-error').hidden=true;
+  if(!data)return;
+  renderPlan();
+  if(!ready)return;
+  const valid=Number.isInteger(day)&&usableRange(start,end);
+  $('input-error').hidden=Boolean(valid);
+  $('input-error').textContent='Çalışma aralığını 08.00–22.00 içinde seç. Bu süre kapanış saatini aşıyor olabilir.';
+  document.querySelectorAll('#filters button').forEach(b=>b.setAttribute('aria-pressed',String(filter===b.dataset.filter)));
+  renderRecommendation();
   if (!valid) {
     $('results').innerHTML = '<p class="empty">Sonuçları görmek için saat ve süreyi düzelt.</p>';
     $('results-title').textContent = 'Saat aralığını kontrol et';
@@ -134,12 +147,12 @@ function openRoom(room) {
   }
   $('detail-content').innerHTML = '' + DAYS.map((day, i) => {
     const meetings = data.events.filter(e => e.room === selectedRoom && e.day === i).sort((a,b) => a.start - b.start);
-    return `<section class="day-section"><h3>${day}${i === current.day ? ' · Seçilen gün' : ''}</h3>${meetings.length ? meetings.map(e => `<div class="meeting"><time>${clock(e.start)}–${clock(e.end)}</time><div><strong>${escape(e.code)}</strong> · ${escape(e.name)}<span>${e.level === 'LS' ? 'Lisans' : e.level==='LUI'?'Lisansüstü 2. öğretim':'Lisansüstü'} · CRN ${escape(e.crn)}${e.provisional?' · PDF’de bölüm onayı bekleyen derslik':''}${overlaps(e, current.day, current.start, current.end) ? ' · Seçilen saatle çakışıyor' : ''}</span></div></div>`).join('') : '<p class="dialog-note">Taranan programda kayıtlı ders yok.</p>'}</section>`;
+    return `<section class="day-section"><h3>${day}${i === current.day ? ' · Seçilen gün' : ''}</h3>${meetings.length ? meetings.map(e => `<div class="meeting"><time>${clock(e.start)}–${clock(e.end)}</time><div><strong>${escape(e.code)}</strong> · ${escape(e.name)}<span>${e.level === 'LS' ? 'Lisans' : e.level==='LUI'?'Lisansüstü 2. öğretim':'Lisansüstü'} · CRN ${escape(e.crn)}${e.provisional?' · PDF’de bölüm onayı bekleyen derslik':''}${purpose&&duration!==null&&overlaps(e, current.day, current.start, current.end) ? ' · Seçilen saatle çakışıyor' : ''}</span></div></div>`).join('') : '<p class="dialog-note">Taranan programda kayıtlı ders yok.</p>'}</section>`;
   }).join('');
   const currentCourses=state.current?.map(e=>`${e.code} · ${e.name}`).filter((x,i,a)=>a.indexOf(x)===i).join(' / ');
   const summary=currentCourses ? `Dolu · ${currentCourses} · ${state.key==='pink'?'sonra boşluk var':'uygun boşluk yok'}` : state.name;
   $('detail-content').insertAdjacentHTML('afterbegin',`<p class="detail-state ${state.key}"><strong>${escape(summary)}</strong>${state.shortBreak?'<br>Öğle arası · kısa çalışma aralığı.':''}${state.key==='pink' && state.freeAt?' <br>Uygun boşluk: '+clock(state.freeAt)+'.':''}</p>`);
-  if(['light','dark'].includes(state.key)&&Number.isFinite(priority(room,purpose)))$('detail-content').insertAdjacentHTML('afterbegin','<button id="reject-detail-room" class="now-button">Bu derslik dolu! Sıradaki yeri bul →</button>');
+  if(purpose&&duration!==null&&['light','dark'].includes(state.key)&&Number.isFinite(priority(room,purpose)))$('detail-content').insertAdjacentHTML('afterbegin','<button id="reject-detail-room" class="now-button">Bu derslik dolu! Başka derslik bul.</button>');
   $('detail').showModal();
 }
 function renderCoverage() {
@@ -164,13 +177,23 @@ $('search').addEventListener('input',render);
 $('now').addEventListener('click',()=>{setNow();resetSearch();});
 $('presets').addEventListener('click',e=>{const b=e.target.closest('[data-min]');if(!b||b.disabled)return;duration=Number(b.dataset.min);resetSearch();});
 $('days').addEventListener('click',e=>{const b=e.target.closest('[data-day]');if(!b)return;selectedDay=Number(b.dataset.day);resetSearch();});
-$('purposes').addEventListener('click',e=>{const b=e.target.closest('[data-purpose]');if(!b)return;const wasUrgent=purpose==='urgent';purpose=b.dataset.purpose;if(purpose==='urgent')duration=30;else if(wasUrgent)duration=60;resetSearch();});
+$('purposes').addEventListener('click',e=>{
+  const b=e.target.closest('[data-purpose]');if(!b)return;
+  if(purpose!==b.dataset.purpose){purpose=b.dataset.purpose;duration=purpose==='urgent'?30:null;}
+  resetSearch();
+});
 $('recommendation').addEventListener('click',e=>{
   if(e.target.closest('#retry-rooms')){resetSearch();return;}
-  if(e.target.closest('#reject-room') && recommendedRoom){rejected.add(recommendedRoom);renderRecommendation();return;}
-  if(e.target.closest('#see-recommended') && recommendedRoom){const f=FLOORS.find(f=>f.rooms.some(r=>r.id===recommendedRoom));if(f){floor=f;$('floor-select').value=f.id;renderPlan();$('kat-plani').scrollIntoView({behavior:'smooth'});}openRoom(recommendedRoom);}
+  if(e.target.closest('#reject-room') && recommendedRoom){rejected.add(recommendedRoom);highlightedRoom=null;renderRecommendation();renderPlan();return;}
+  if(e.target.closest('#see-recommended') && recommendedRoom){
+    const f=FLOORS.find(f=>f.rooms.some(r=>r.id===recommendedRoom));if(!f)return;
+    floor=f;highlightedRoom=recommendedRoom;$('floor-select').value=f.id;zoomPlan(1);renderPlan();
+    const target=$('floor-map').querySelector('.recommended-room');
+    target?.focus({preventScroll:true});
+    target?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'center',inline:'center'});
+  }
 });
-$('detail-content').addEventListener('click',e=>{if(e.target.closest('#reject-detail-room')){rejected.add(selectedRoom);$('detail').close();renderRecommendation();$('recommendation').scrollIntoView({behavior:'smooth',block:'center'});}});
+$('detail-content').addEventListener('click',e=>{if(e.target.closest('#reject-detail-room')){rejected.add(selectedRoom);highlightedRoom=null;$('detail').close();renderRecommendation();renderPlan();$('recommendation').scrollIntoView({behavior:'smooth',block:'center'});}});
 $('filters').addEventListener('click', e => { const b = e.target.closest('[data-filter]'); if (!b) return; filter = b.dataset.filter; render(); });
 $('results').addEventListener('click', e => {
   const save = e.target.closest('[data-save]');
