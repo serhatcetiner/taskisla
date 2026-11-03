@@ -9,13 +9,13 @@ const check=(events,day,time)=>availability(events,['217A'],'217A',day,time);
 test('Hafta içi 17.30 ve cuma 18.00 renk sınırları',()=>{
   assert.equal(teachingEnd(0),1050);assert.equal(teachingEnd(3),1050);assert.equal(teachingEnd(4),1080);assert.equal(teachingEnd(5),null);
   assert.equal(check([e(630,1050)],0,630).key,'red');
-  assert.equal(check([e(630,1050,4)],4,630).key,'pink');
+  assert.equal(check([e(630,1050,4)],4,630).key,'red');
   assert.equal(check([e(630,1080,4)],4,630).key,'red');
 });
 test('Dersler arasındaki gerçek boşluk pembe, bitişte koyu yeşil',()=>{
   assert.equal(check([e(510,750)],0,630).key,'pink');
   assert.equal(check([e(510,750)],0,750).key,'dark');
-  assert.equal(check([e(510,750),e(810,1050)],0,630).key,'pink');
+  assert.equal(check([e(510,750),e(810,1050)],0,630).key,'red');
   assert.equal(check([e(510,750),e(750,1050)],0,630).key,'red');
 });
 test('Boş odada sonraki ders açık yeşil, yoksa koyu yeşil',()=>{

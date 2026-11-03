@@ -1,45 +1,51 @@
 import { DAYS, minutes, clock, overlaps, roomState, validRange, dayOfDate, istanbulNow } from './core.mjs';
+import { recommendations, priority, AMPHITHEATRES, displayRoom } from './recommendations.mjs';
 import { FLOORS } from './floors.mjs';
-import { availability, STATUS, teachingEnd, NON_STUDY_ROOMS } from './availability.mjs';
+import { availability, STATUS, NON_STUDY_ROOMS } from './availability.mjs';
 const $ = id => document.getElementById(id);
 const escape = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let data, filter = 'free', favorites = new Set(), selectedRoom;
 let planZoom = 1;
-let floor = FLOORS[1];
+let floor = FLOORS[2];
+let selectedDay, duration = 60, purpose = 'project', rejected = new Set(), recommendedRoom;
 try { const saved = JSON.parse(localStorage.getItem('taskisla-favorites') || '[]'); if (Array.isArray(saved)) favorites = new Set(saved.filter(x => typeof x === 'string')); } catch {}
-const dateLabel = value => new Intl.DateTimeFormat('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(`${value}T12:00:00`));
+function setStart(value) {
+  if (![...$('start').options].some(o=>o.value===value)) $('start').add(new Option(value,value));
+  $('start').value=value;
+}
 function setNow() {
-  const now = istanbulNow();
-  $('date').value = now.date;
-  $('start').value = now.time;
-  $('end').value = clock(Math.min(minutes(now.time) + 60, 1439));
-  if (minutes(now.time) === 1439) { $('start').value = '23:58'; $('end').value = '23:59'; }
+  const now=istanbulNow(); selectedDay=dayOfDate(now.date); setStart(now.time);
 }
-function range() { return {day: dayOfDate($('date').value), start: minutes($('start').value), end: minutes($('end').value)}; }
+function range() { const start=minutes($('start').value); return {day:selectedDay,start,end:start+duration}; }
+function usableRange(start,end){return validRange(start,end)&&start>=480&&end<=1320;}
 function renderDays() {
-  const day = dayOfDate($('date').value);
-  $('days').innerHTML = DAYS.map((name, index) => `<button data-day="${index}" aria-pressed="${index === day}">${name}</button>`).join('');
+  $('days').innerHTML=DAYS.map((name,index)=>`<button data-day="${index}" aria-pressed="${index===selectedDay}">${name}</button>`).join('');
 }
-function kind(room) { return /^\d/.test(room) || /^D\d/.test(room) ? 'DERSLİK' : 'STÜDYO / ÖZEL ALAN'; }
-function sourceLabel(event){return event.source==='obs+pdf'?'OBS + derslik PDF’si':event.source==='pdf'?'Yalnızca PDF':'OBS';}
+function resetSearch(){rejected.clear();render();}
+function renderRecommendation() {
+  const {day,start,end}=range();
+  const candidates=recommendations(data,day,start,end,purpose,rejected);
+  recommendedRoom=candidates[0]?.room;
+  const target=$('recommendation');
+  if(!recommendedRoom){target.innerHTML=`<p class="eyebrow">SANA UYGUN BİR YER</p><h2>${rejected.size?'Sıradaki uygun yer kalmadı.':'Bu süreye uygun bir yer bulamadık.'}</h2><p>Başlangıcı veya çalışma süresini değiştirebilirsin.</p>${rejected.size?'<button id="retry-rooms" class="now-button">Atladığım derslikleri yeniden göster</button>':''}`;return;}
+  const room=recommendedRoom;
+  const mappedFloor=FLOORS.find(f=>f.rooms.some(r=>r.id===room));
+  target.innerHTML=`<div><p class="eyebrow">SANA UYGUN BİR YER</p><h2>${escape(displayRoom(room))} <span>${AMPHITHEATRES.includes(room)?'Amfi':mappedFloor?.name||'Derslik'}</span></h2><p>${DAYS[day]} · ${clock(start)}–${clock(end)} boyunca programda boş.</p></div><div class="recommendation-actions"><button id="see-recommended">Haritada ve programda gör ↗</button><button id="reject-room">Bu derslik dolu! →</button></div>`;
+}
+function kind(room) { if(AMPHITHEATRES.includes(room))return 'AMFİ'; return /^\d/.test(room) || /^D\d/.test(room) ? 'DERSLİK' : 'STÜDYO / ÖZEL ALAN'; }
 function renderPlan() {
   if (!data) return;
   const {day,start,end} = range();
-  const valid = $('date').value && Number.isInteger(day) && validRange(start,end);
+  const valid = Number.isInteger(day) && validRange(start,end);
   $('plan-body').hidden = !valid;
   $('plan-invalid').hidden = Boolean(valid);
   if (!valid) return;
   const states = floor.rooms.map(r=>({...r,state:availability(data.events,data.rooms,r.id,day,start)}));
   $('plan-title').textContent=`${floor.name} planı`;
   const counts = states.reduce((a,r)=>{a[r.state.key]=(a[r.state.key]||0)+1;return a;},{});
-  const boundary = teachingEnd(day);
   $('plan-time').textContent = `${DAYS[day]} · ${clock(start)}`;
   $('plan-time-output').textContent = clock(start);
   $('plan-slider').value = Math.max(480,Math.min(1320,start));
-  $('plan-hours').textContent = boundary === null
-    ? 'Hafta sonu: kayıtlı dersler varsa doluluğa dahildir. Bina kapanışı 22.00.'
-    : `Olağan ders saati sonu ${clock(boundary)} · Akşam dersleri de dahildir · Kapanış 22.00`;
-  $('plan-caption').textContent = `Renkler ${clock(start)} anına göre hesaplanır. Aşağıdaki liste ise seçtiğin ${clock(start)}–${clock(end)} aralığının tamamını kontrol eder. Gri alanların doluluğu takip edilmez.`;
   $('plan-summary').textContent = start>=1320 ? '22.00 kapanış sınırının dışındasın.' : `${(counts.light||0)+(counts.dark||0)} derslik şu an programda boş · ${(counts.red||0)+(counts.pink||0)} derslikte ders var · ${counts.unknown||0} alanda veri yok${counts.blocked?' · '+counts.blocked+' alan ders çalışmaya kapalı':''}`;
   $('plan-legend').innerHTML = [...(start>=1320?['closed']:['light','dark','pink','red']),'unknown',...(counts.blocked?['blocked']:[])].map(key=>`<span title="${escape(STATUS[key].help)}"><i class="swatch ${key}"></i>${STATUS[key].name}</span>`).join('');
   const box = (r,cls,extra='')=>`<rect x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" rx="4" class="${cls}" ${extra}/>`;
@@ -58,7 +64,7 @@ function renderPlan() {
     ${states.map(r=>{
       const s=r.state;
       const aria=`${r.label||r.id}: ${s.name}${s.next ? ', sonraki ders '+clock(s.next.start):''}`;
-      return `<g role="button" tabindex="0" class="map-room ${s.key}" data-room="${escape(r.id)}" aria-label="${escape(aria)}"><title>${escape(aria)}. Ayrıntıları aç.</title>${box(r,'room-shape')}${['unknown','blocked'].includes(s.key)?box(r,'room-hatch','aria-hidden="true"'):''}${text(r,r.label||r.id,r.small?'room-label small-label':'room-label')}</g>`;
+      return `<g role="button" tabindex="0" class="map-room ${s.key}" data-room="${escape(r.id)}" aria-label="${escape(aria)}"><title>${escape(aria)}. Ayrıntıları aç.</title>${box(r,'room-shape')}${['unknown','blocked'].includes(s.key)?box(r,'room-hatch','aria-hidden="true"'):''}${text({...r,y:r.y-(AMPHITHEATRES.includes(r.id)?8:0)},r.label||r.id,r.small?'room-label small-label':'room-label')}${AMPHITHEATRES.includes(r.id)?text({...r,y:r.y+13},'AMFİ','amphi-label'):''}</g>`;
     }).join('')}`;
 }
 function timeline(meetings, start, end) {
@@ -70,14 +76,18 @@ function render() {
   renderDays();
   if (!data) return;
   const {day, start, end} = range();
-  const valid = $('date').value && Number.isInteger(day) && validRange(start, end);
+  const valid = Number.isInteger(day) && usableRange(start, end);
   $('input-error').hidden = Boolean(valid);
-  $('input-error').textContent = 'Geçerli bir tarih ve aynı gün içinde, başlangıçtan sonraki bir bitiş saati seçin.';
+  $('input-error').textContent = 'Çalışma aralığını 08.00–22.00 içinde seç. Bu süre kapanış saatini aşıyor olabilir.';
   document.querySelectorAll('#presets button').forEach(b => b.setAttribute('aria-pressed', String(end - start === Number(b.dataset.min))));
   document.querySelectorAll('#filters button').forEach(b => b.setAttribute('aria-pressed', String(filter === b.dataset.filter)));
   renderPlan();
+  renderRecommendation();
+  $('range-summary').textContent=`${DAYS[day]} · ${clock(start)}${end<=1440?'–'+clock(end):' · '+duration/60+' saat, kapanışı aşıyor'}${purpose==='urgent'?' · Acil teslim için 30 dakika':''}`;
+  document.querySelectorAll('#purposes button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.purpose===purpose)));
+  document.querySelectorAll('#presets button').forEach(b=>b.disabled=purpose==='urgent' && b.dataset.min!=='30');
   if (!valid) {
-    $('results').innerHTML = '<p class="empty">Sonuçları görmek için tarih ve saat aralığını düzeltin.</p>';
+    $('results').innerHTML = '<p class="empty">Sonuçları görmek için saat ve süreyi düzelt.</p>';
     $('results-title').textContent = 'Saat aralığını kontrol et';
     for (const id of ['free-count', 'all-count', 'busy-count']) $(id).textContent = '—';
     return;
@@ -87,23 +97,22 @@ function render() {
   $('free-count').textContent = free;
   $('all-count').textContent = states.length;
   $('busy-count').textContent = states.length - free;
-  $('selection-label').textContent = `${dateLabel($('date').value).toLocaleUpperCase('tr-TR')} · ${DAYS[day].toLocaleUpperCase('tr-TR')} · ${clock(start)}–${clock(end)}`;
+  $('selection-label').textContent = `${DAYS[day].toLocaleUpperCase('tr-TR')} · ${clock(start)}–${clock(end)}`;
   $('results-title').textContent = `${free} derslik programda boş görünüyor`;
   const search = $('search').value.trim().toLocaleUpperCase('tr-TR');
   const shown = states.filter(s => (filter === 'all' || (filter === 'free' && s.free) || (filter === 'busy' && !s.free) || (filter === 'saved' && favorites.has(s.room))) && s.room.toLocaleUpperCase('tr-TR').includes(search));
-  shown.sort((a, b) => a.room.localeCompare(b.room, 'tr', {numeric:true}));
+  shown.sort((a,b)=>priority(a.room,purpose)-priority(b.room,purpose)||a.room.localeCompare(b.room,'tr',{numeric:true}));
   $('results').innerHTML = shown.length ? shown.map(s => {
     const info = s.free ? (s.next ? `${clock(s.next.start)}’a kadar programda ders yok` : 'Seçilen saatten sonra kayıtlı ders yok') : `${s.conflicts.map(e => e.code).filter((x,i,a) => a.indexOf(x) === i).join(' · ')}`;
     return `<article class="room-card ${s.free ? '' : 'busy'} ${s.room.length > 5 ? 'long' : ''}"><div class="room-top"><span class="room-kind">MMB / ${kind(s.room)}</span><button class="favorite" data-save="${escape(s.room)}" aria-label="${escape(s.room)} dersliğini ${favorites.has(s.room) ? 'favorilerden çıkar' : 'kaydet'}" aria-pressed="${favorites.has(s.room)}">${favorites.has(s.room) ? '♥' : '♡'}</button></div><div class="room-name"><h3>${escape(s.room)}</h3><span class="status">${s.free ? '● Programda boş' : '● Ders var'}</span></div><p class="room-info" title="${escape(info)}">${escape(info)}</p>${timeline(s.meetings, start, end)}<button class="card-bottom" data-room="${escape(s.room)}"><span>Haftalık programa bak</span><b aria-hidden="true">↗</b></button></article>`;
   }).join('') : `<div class="empty">${filter === 'saved' && !favorites.size ? 'Henüz kaydedilen derslik yok.<br>Derslik kartındaki kalbe dokunarak kaydet.' : 'Bu filtrelerle eşleşen derslik bulunamadı.<br>Saat aralığını veya arama metnini değiştirebilirsin.'}</div>`;
-  $('scope-note').textContent = `${shown.length} / ${states.length} derslik gösteriliyor. Derslik listesi, seçilen kodlarda en az bir MMB oturumu bulunan mekânlardan oluşur. Saatler İstanbul saatidir; tarih seçimi haftanın gününe ait tekrarlayan programı gösterir.`;
+  $('scope-note').textContent = `${shown.length} / ${states.length} derslik gösteriliyor. Derslik listesi, seçilen kodlarda en az bir MMB oturumu bulunan mekânlardan oluşur. Saatler İstanbul saatidir; seçilen günün tekrarlayan programı gösterilir.`;
   const missing = data.coverage.filter(c => c.status !== 'ok');
   const warnings = [];
   if(end>1320) warnings.push('Seçtiğin aralık, belirtilen 22.00 bina kapanışını aşıyor. Programda ders olmaması binanın açık olduğu anlamına gelmez.');
   if (missing.length) warnings.push(`${missing.map(c => c.code).join(', ')} şu an OBS seçim listesinde yok.`);
   if (data.unresolved.length) warnings.push(`${data.unresolved.length} kaydın derslik bilgisi kesin tamamlanamadı; doluluk hesabına katılmadı.`);
-  if(data.secondarySource?.pdfOnlyMeetings)warnings.push(`${data.secondarySource.pdfOnlyMeetings} oturum yalnızca ikincil PDF kaynağında bulundu; ayrı kaynak etiketiyle hesaba katıldı.`);
-  if (new Date($('date').value + 'T12:00:00') > new Date(Date.now() + 90 * 86400000) || new Date($('date').value + 'T12:00:00') < new Date(Date.now() - 90 * 86400000)) warnings.push('Seçilen tarih, güncel programdan uzak. Dönem ve tatil tarihlerini OBS’den kontrol et.');
+
   $('notice').hidden = !warnings.length;
   $('notice').innerHTML = warnings.map(escape).join(' ') + ' <button id="coverage-link">Kapsamı incele ↗</button>';
   $('coverage-link')?.addEventListener('click', () => $('coverage').showModal());
@@ -116,18 +125,21 @@ function openRoom(room) {
   const state = availability(data.events,data.rooms,room,current.day,current.start);
   $('detail-title').textContent = `${mapped?.label || room} · Haftalık program`;
   if(state.key==='blocked'){
-    $('detail-content').innerHTML='<p class="dialog-note">SER-ATELYE ders çalışma alanı olarak kullanılamaz. Programdaki doluluk durumundan bağımsız olarak taralı gösterilir ve boş derslik önerilerine katılmaz.</p>';
+    $('detail-content').innerHTML=`<p class="dialog-note">${escape(room)} ders çalışma alanı olarak kullanılamaz.</p>`;
     $('detail').showModal();return;
   }
   if (state.key==='unknown') {
     $('detail-content').innerHTML = '<p class="dialog-note">Bu alan, mevcut OBS taramasındaki bir derslikle eşleşmiyor. Program kaydı bulunmaması boş olduğu anlamına gelmez.</p>' + (room.startsWith('203') ? '<p class="dialog-note">203A, 203B ve 203C, ortak uzun alanın üç eşit bölümü olarak çizildi. Şemadaki ayrım fiziksel duvar olduğu anlamına gelmez.</p>':'');
     $('detail').showModal(); return;
   }
-  $('detail-content').innerHTML = `<p class="dialog-note">${escape(data.terms.LS)} · ${dateLabel($('date').value)} haftası için tekrarlayan ders programı. Seçilen aralık: ${DAYS[current.day]}, ${clock(current.start)}–${clock(current.end)}. Özel rezervasyonları kapsamaz.</p>` + DAYS.map((day, i) => {
+  $('detail-content').innerHTML = '' + DAYS.map((day, i) => {
     const meetings = data.events.filter(e => e.room === selectedRoom && e.day === i).sort((a,b) => a.start - b.start);
-    return `<section class="day-section"><h3>${day}${i === current.day ? ' · Seçilen gün' : ''}</h3>${meetings.length ? meetings.map(e => `<div class="meeting"><time>${clock(e.start)}–${clock(e.end)}</time><div><strong>${escape(e.code)}</strong> · ${escape(e.name)}<span>${e.level === 'LS' ? 'Lisans' : e.level==='LUI'?'Lisansüstü 2. öğretim':'Lisansüstü'} · CRN ${escape(e.crn)} · ${sourceLabel(e)}${e.pdfPage?' · PDF s.'+e.pdfPage:''}${e.provisional?' · PDF’de bölüm onayı bekleyen derslik':''}${overlaps(e, current.day, current.start, current.end) ? ' · Seçilen saatle çakışıyor' : ''}</span></div></div>`).join('') : '<p class="dialog-note">Taranan programda kayıtlı ders yok.</p>'}</section>`;
+    return `<section class="day-section"><h3>${day}${i === current.day ? ' · Seçilen gün' : ''}</h3>${meetings.length ? meetings.map(e => `<div class="meeting"><time>${clock(e.start)}–${clock(e.end)}</time><div><strong>${escape(e.code)}</strong> · ${escape(e.name)}<span>${e.level === 'LS' ? 'Lisans' : e.level==='LUI'?'Lisansüstü 2. öğretim':'Lisansüstü'} · CRN ${escape(e.crn)}${e.provisional?' · PDF’de bölüm onayı bekleyen derslik':''}${overlaps(e, current.day, current.start, current.end) ? ' · Seçilen saatle çakışıyor' : ''}</span></div></div>`).join('') : '<p class="dialog-note">Taranan programda kayıtlı ders yok.</p>'}</section>`;
   }).join('');
-  $('detail-content').insertAdjacentHTML('afterbegin',`<p class="detail-state ${state.key}"><strong>${escape(state.name)}</strong><br>${escape(state.help)}${state.freeAt ? ' İlk boşluk: '+clock(state.freeAt)+'.':''}${state.next && !state.current?.length ? ' Sonraki ders: '+clock(state.next.start)+'.':''}</p>`);
+  const currentCourses=state.current?.map(e=>`${e.code} · ${e.name}`).filter((x,i,a)=>a.indexOf(x)===i).join(' / ');
+  const summary=currentCourses ? `Dolu · ${currentCourses} · ${state.key==='pink'?'sonra boşluk var':'uygun boşluk yok'}` : state.name;
+  $('detail-content').insertAdjacentHTML('afterbegin',`<p class="detail-state ${state.key}"><strong>${escape(summary)}</strong>${state.shortBreak?'<br>Öğle arası · kısa çalışma aralığı.':''}${state.key==='pink' && state.freeAt?' <br>Uygun boşluk: '+clock(state.freeAt)+'.':''}</p>`);
+  if(['light','dark'].includes(state.key)&&Number.isFinite(priority(room,purpose)))$('detail-content').insertAdjacentHTML('afterbegin','<button id="reject-detail-room" class="now-button">Bu derslik dolu! Sıradaki yeri bul →</button>');
   $('detail').showModal();
 }
 function renderCoverage() {
@@ -138,19 +150,27 @@ function renderCoverage() {
   const sourceCounts=data.events.reduce((a,e)=>{a[e.source]=(a[e.source]||0)+1;return a;},{});
   $('coverage-content').innerHTML=`<p class="dialog-note"><a href="${escape(data.source)}" target="_blank" rel="noopener noreferrer"><u>İTÜ OBS Ders Programı ↗</u></a><br>Bir defalık veri alımı: ${updated} (İstanbul).<br>${data.events.length} oturum · ${data.rooms.length} mekân. Bu sürüm sabittir; site OBS’ye istek göndermez.</p>
   <p class="dialog-note"><strong>Öncelik: OBS → derslik PDF’si.</strong> ${sourceCounts.obs||0} oturum doğrudan OBS’den; ${sourceCounts['obs+pdf']||0} oturumun eksik bilgisi PDF ile tamamlandı; ${sourceCounts.pdf||0} oturum yalnızca PDF’de bulundu. Tam OBS kaydı PDF ile değiştirilmedi. Eşleştirme CRN, bilinen gün ve saat üzerinden yapıldı.</p>
-  <p class="dialog-note">İkincil kaynak: ${escape(secondary?.name||'—')}. ${secondary?.conflicts||0} farklılıkta OBS korundu. Yalnızca PDF’deki kayıtların OBS’de güncel karşılığı doğrulanamadı; programda kaynakları belirtilir. SBP proje derslikleri PDF’de bölüm onayı bekleyen kayıtlar olarak işaretlidir.</p>
+  <p class="dialog-note">İkincil kaynak: ${escape(secondary?.name||'—')}. ${secondary?.conflicts||0} farklılıkta OBS korundu. Yalnızca PDF’deki kayıtların OBS’de güncel karşılığı doğrulanamadı. SBP proje derslikleri PDF’de bölüm onayı bekleyen kayıtlar olarak işaretlidir.</p>
   <p class="dialog-note">Akşam ve hafta sonu dersleri hesaba dahildir. Hafta içi 17.30, cuma 18.00 olağan sınırları, gerçek geç dersleri silmez. 22.00 sonrası bina kapalı kabul edilir. SER-ATELYE boş çalışma alanı olarak önerilmez.</p>
   <table><thead><tr><th>Düzey</th><th>Kod</th><th>OBS satırı</th><th>MMB oturumu</th></tr></thead><tbody>${data.coverage.map(c=>`<tr><td>${c.level==='LS'?'Lisans':c.level==='LUI'?'Lisansüstü 2. öğretim':'Lisansüstü'}</td><td>${escape(c.code)}</td><td>${c.status==='ok'?c.rows:'Listede yok'}</td><td>${c.meetings||0}</td></tr>`).join('')}</tbody></table>
-  <p class="dialog-note">Tarih seçimi sabit haftalık programı haftanın gününe uygular. Tatiller, sınav haftaları ve dönem sınırları kontrol edilmez. OBS’nin 12:29 bitiş dakikası dahil sayılır; uygulamada 12:30’a kadar doludur.</p>
+  <p class="dialog-note">Gün seçimi sabit haftalık programı gösterir. Tatiller, sınav haftaları ve dönem sınırları kontrol edilmez. OBS’nin 12:29 bitiş dakikası dahil sayılır; uygulamada 12:30’a kadar doludur.</p>
   <details><summary>Eksik bilgili ${data.unresolved.length} kayıt</summary>${data.unresolved.map(e=>`<p class="dialog-note">${escape(e.code)} · CRN ${escape(e.crn)} · ${typeof e.day==='number'?DAYS[e.day]:escape(e.day||'Gün belirsiz')} · ${escape(e.reason||'Eksik bilgi')}</p>`).join('')}</details>`;
 
 }
-setNow();
-renderDays();
-for (const id of ['date', 'start', 'end', 'search']) $(id).addEventListener('input', render);
-$('now').addEventListener('click', () => { setNow(); render(); });
-$('presets').addEventListener('click', e => { const b = e.target.closest('[data-min]'); if (!b) return; const start = minutes($('start').value); if (Number.isNaN(start)) return; $('end').value = clock(Math.min(start + Number(b.dataset.min), 1439)); render(); });
-$('days').addEventListener('click', e => { const b = e.target.closest('[data-day]'); if (!b || !$('date').value) return; const d = new Date($('date').value + 'T12:00:00'); d.setDate(d.getDate() + Number(b.dataset.day) - dayOfDate($('date').value)); $('date').value = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; render(); });
+for(let t=480;t<=1320;t+=15)$('start').add(new Option(clock(t),clock(t)));
+setNow();renderDays();
+$('start').addEventListener('change',resetSearch);
+$('search').addEventListener('input',render);
+$('now').addEventListener('click',()=>{setNow();resetSearch();});
+$('presets').addEventListener('click',e=>{const b=e.target.closest('[data-min]');if(!b||b.disabled)return;duration=Number(b.dataset.min);resetSearch();});
+$('days').addEventListener('click',e=>{const b=e.target.closest('[data-day]');if(!b)return;selectedDay=Number(b.dataset.day);resetSearch();});
+$('purposes').addEventListener('click',e=>{const b=e.target.closest('[data-purpose]');if(!b)return;const wasUrgent=purpose==='urgent';purpose=b.dataset.purpose;if(purpose==='urgent')duration=30;else if(wasUrgent)duration=60;resetSearch();});
+$('recommendation').addEventListener('click',e=>{
+  if(e.target.closest('#retry-rooms')){resetSearch();return;}
+  if(e.target.closest('#reject-room') && recommendedRoom){rejected.add(recommendedRoom);renderRecommendation();return;}
+  if(e.target.closest('#see-recommended') && recommendedRoom){const f=FLOORS.find(f=>f.rooms.some(r=>r.id===recommendedRoom));if(f){floor=f;$('floor-select').value=f.id;renderPlan();$('kat-plani').scrollIntoView({behavior:'smooth'});}openRoom(recommendedRoom);}
+});
+$('detail-content').addEventListener('click',e=>{if(e.target.closest('#reject-detail-room')){rejected.add(selectedRoom);$('detail').close();renderRecommendation();$('recommendation').scrollIntoView({behavior:'smooth',block:'center'});}});
 $('filters').addEventListener('click', e => { const b = e.target.closest('[data-filter]'); if (!b) return; filter = b.dataset.filter; render(); });
 $('results').addEventListener('click', e => {
   const save = e.target.closest('[data-save]');
@@ -160,7 +180,7 @@ $('results').addEventListener('click', e => {
 $('floor-select').addEventListener('change',()=>{floor=FLOORS.find(f=>f.id===$('floor-select').value)||FLOORS[1];zoomPlan(1);renderPlan();});
 $('floor-map').addEventListener('click',e=>{const room=e.target.closest('[data-room]');if(room)openRoom(room.dataset.room);});
 $('floor-map').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){const room=e.target.closest('[data-room]');if(room){e.preventDefault();openRoom(room.dataset.room);}}});
-$('plan-slider').addEventListener('input',()=>{const old=range();const duration=validRange(old.start,old.end)?old.end-old.start:60;const start=Number($('plan-slider').value);$('start').value=clock(start);$('end').value=clock(Math.min(start+duration,1439));render();});
+$('plan-slider').addEventListener('input',()=>{setStart(clock(Number($('plan-slider').value)));resetSearch();});
 function zoomPlan(amount){planZoom=Math.max(1,Math.min(2.5,amount));$('floor-map').style.width=`${planZoom*100}%`;$('floor-map').style.minWidth=planZoom===1?'0':`${560*planZoom}px`;$('zoom-out').disabled=planZoom===1;$('zoom-in').disabled=planZoom===2.5;}
 $('zoom-in').addEventListener('click',()=>zoomPlan(planZoom+.25));
 $('zoom-out').addEventListener('click',()=>zoomPlan(planZoom-.25));
