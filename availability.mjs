@@ -7,7 +7,7 @@ export const STATUS = {
   closed: {name:'Bina kapalı',short:'22.00 sonrası',help:'Belirtilen 22.00 kapanış sınırının dışında. Açık veya kullanıma uygun kabul edilmez.'},
   blocked: {name:'Ders çalışma alanı değil',short:'Kullanım dışı',help:'Bu alan ders çalışmak için kullanılamaz; boş çalışma alanı olarak önerilmez.'}
 };
-export const NON_STUDY_ROOMS=['SER-ATELYE','227B'];
+export const NON_STUDY_ROOMS=['SER-ATELYE','227B','FOTOATOLYE','MZLB','MLZB'];
 export function teachingEnd(day) { return day < 4 ? 17*60+30 : day === 4 ? 18*60 : null; }
 export function lunchWindow(day) {return day<5 ? {start:750,end:day===4?840:810} : null;}
 // A lunch-only gap and the last hour of the teaching day do not make a busy room pink.

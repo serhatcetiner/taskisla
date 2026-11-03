@@ -56,3 +56,12 @@ test('227B kayıtlı olsun olmasın kapalı ve10amfi tanımlı',()=>{
   assert.equal(availability([],[],'227B',0,600).key,'blocked');
   assert.equal(AMPHITHEATRES.length,10);
 });
+test('216A/B küçük çalışma odalarıyla aynı öncelikte; kullanıma kapalı odalar önerilmez',()=>{
+  for(const purpose of ['project','focus','urgent']){
+    for(const room of ['216A','216B','217E','217F','217G'])assert.equal(priority(room,purpose),9);
+    const data={rooms:['FOTOATOLYE','MZLB','MLZB','216A','217E'],events:[]};
+    assert.deepEqual(recommendations(data,0,600,630,purpose).map(r=>r.room),['216A','217E']);
+  }
+  for(const room of ['FOTOATOLYE','MZLB','MLZB'])assert.equal(availability([],[],room,0,600).key,'blocked');
+  assert.equal(availability([],[],'216B',0,600).key,'unknown');
+});

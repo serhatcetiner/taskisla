@@ -8,6 +8,7 @@ let data, filter = 'free', favorites = new Set(), selectedRoom;
 let planZoom = 1;
 let floor = FLOORS[2];
 let highlightedRoom = null;
+let exhaustionShown = false;
 let selectedDay, duration = null, purpose = null, rejected = new Set(), recommendedRoom;
 try { const saved = JSON.parse(localStorage.getItem('taskisla-favorites') || '[]'); if (Array.isArray(saved)) favorites = new Set(saved.filter(x => typeof x === 'string')); } catch {}
 function setStart(value) {
@@ -22,13 +23,19 @@ function usableRange(start,end){return validRange(start,end)&&start>=480&&end<=1
 function renderDays() {
   $('days').innerHTML=DAYS.map((name,index)=>`<button data-day="${index}" aria-pressed="${index===selectedDay}">${name}</button>`).join('');
 }
-function resetSearch(){rejected.clear();highlightedRoom=null;render();}
+function resetSearch(){rejected.clear();highlightedRoom=null;exhaustionShown=false;render();}
 function renderRecommendation() {
   const {day,start,end}=range();
   const candidates=recommendations(data,day,start,end,purpose,rejected);
   recommendedRoom=candidates[0]?.room;
   const target=$('recommendation');
-  if(!recommendedRoom){target.innerHTML=`<p class="eyebrow">SANA UYGUN BİR YER</p><h2>${rejected.size?'Sıradaki uygun yer kalmadı.':'Bu süreye uygun bir yer bulamadık.'}</h2><p>Başlangıcı veya çalışma süresini değiştirebilirsin.</p>${rejected.size?'<button id="retry-rooms" class="now-button">Atladığım derslikleri yeniden göster</button>':''}`;return;}
+  if(!recommendedRoom){
+    target.innerHTML=`<p class="eyebrow">SANA UYGUN BİR YER</p><h2>${rejected.size?'Sıradaki uygun yer kalmadı.':'Bu süreye uygun bir yer bulamadık.'}</h2><p>Başlangıcı veya çalışma süresini değiştirebilirsin.</p>${rejected.size?'<button id="retry-rooms" class="now-button">Atladığım derslikleri yeniden göster</button>':''}`;
+    if(!exhaustionShown&&purpose&&duration!==null&&usableRange(start,end)){
+      exhaustionShown=true;$('exhausted').showModal();
+    }
+    return;
+  }
   const room=recommendedRoom;
   const mappedFloor=FLOORS.find(f=>f.rooms.some(r=>r.id===room));
   target.innerHTML=`<div><p class="eyebrow">SANA UYGUN BİR YER</p><h2>${escape(displayRoom(room))} <span>${AMPHITHEATRES.includes(room)?'Amfi':mappedFloor?.name||'Derslik'}</span></h2><p>${DAYS[day]} · ${clock(start)}–${clock(end)} boyunca programda boş.</p></div><div class="recommendation-actions"><button id="see-recommended" ${mappedFloor?'':'disabled title="Bu derslik henüz haritada yok"'}>Haritada Gör ↗</button><button id="reject-room">Bu derslik dolu! Başka derslik bul.</button></div>`;
@@ -210,6 +217,7 @@ $('zoom-out').addEventListener('click',()=>zoomPlan(planZoom-.25));
 $('zoom-reset').addEventListener('click',()=>zoomPlan(1));
 zoomPlan(1);
 $('about').addEventListener('click', () => { if (data) $('coverage').showModal(); });
+$('exhausted-ok').addEventListener('click',()=>$('exhausted').close());
 document.querySelectorAll('dialog').forEach(d => { d.querySelector('.close').addEventListener('click', () => d.close()); d.addEventListener('click', e => { if (e.target === d) { const r = d.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) d.close(); } }); });
 try {
   const response = await fetch('./data/schedule.json', {cache:'no-cache'});

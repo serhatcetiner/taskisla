@@ -14,11 +14,11 @@
 
 ## Öncelikler
 
-Proje / acil teslim sırası: 3401–3407; 3502–3505; 380; 3501/3506; ÇATI1–5; 131/134/136A/136B; 123A/123B/119A/119B; 333; 217E/F/G; 212/214; 217A/B/C/D; 203A/B/C; diğer 300'lü odalar; amfiler; BIM1; BIM2. Kullanıcının sıralamadığı diğer kayıtlı odalar bunların ardından, ÇATI6 ise en son değerlendirilir. Aynı öncelikte oda numarası sırası kullanılır.
+Proje / acil teslim sırası: 3401–3407; 3502–3505; 380; 3501/3506; ÇATI1–5; 131/134/136A/136B; 123A/123B/119A/119B; 333; 216A/B ve 217E/F/G; 212/214; 217A/B/C/D; 203A/B/C; diğer 300'lü odalar; amfiler; BIM1; BIM2. Kullanıcının sıralamadığı diğer kayıtlı odalar bunların ardından, ÇATI6 ise en son değerlendirilir. Aynı öncelikte oda numarası sırası kullanılır.
 
 Bireysel çalışmada üç haneli 300'lü odalar (333 dahil, 380 hariç) ilk sıraya, 380 ikinci sıraya alınır; ardından proje sırası korunur.
 
-3400 haritada ve tüm odalar listesinde görülebilir ama hiçbir çalışma önerisine girmez. SER-ATELYE ve 227B daima taralıdır ve çalışma önerileri/listesinden çıkarılır. OBS eşleşmesi olmayan alanlar boş sayılmaz.
+3400 haritada ve tüm odalar listesinde görülebilir ama hiçbir çalışma önerisine girmez. SER-ATELYE, 227B, FOTOATOLYE ve MZLB (MLZB yazımı da kabul edilir) ders çalışma alanı değildir; haritada bulunanları daima taralıdır ve çalışma önerileri/listesinden çıkarılır.
 
 106, 107, 126, 127, 229, 230, 231, 227, 215, 216 haritada küçük AMFİ etiketi taşır. Varsayılan kat çatı katıdır.
 
@@ -39,3 +39,5 @@ Ders ayrıntısında o anki dersin adı ve kodu gösterilir. Tarihli uzun açık
 ## Haritada önerilen yeri bul
 
 Açık yeşil Haritada Gör düğmesi doğru katı seçer ve odanın konumuna kaydırır. Önerilen oda mevcut doluluk rengini koruyarak turuncu dış çerçeveyle vurgulanır. Bu düğme program penceresini açmaz; oda kutusuna tıklamak veya oda odaktayken Enter/boşluk tuşuna basmak haftalık programı açar. Açık pembe Bu derslik dolu! Başka derslik bul. düğmesi sıradaki uygun öneriye geçer ve önceki vurguyu kaldırır. Arama ölçütleri değişince vurgu sıfırlanır. Konumu henüz şemada olmayan bir derslik için harita düğmesi devre dışıdır.
+
+Geçerli bir çalışma aralığında uygun aday kalmadığında bir kez şu pencere açılır: Taşkışla'da yer kalmamış! MED-C'ye gitmeni öneriyorum. Tamam veya kapat düğmesiyle kapanır. Aynı aramada filtreye dokunmak pencereyi yeniden açmaz. Atlanan odaları yeniden gösterme düğmesi önerileri baştan başlatır. Tarih/saat/süre/amaç değişimi yeni aramadır. Kapanışı aşan geçersiz bir aralık MED-C mesajını tetiklemez.

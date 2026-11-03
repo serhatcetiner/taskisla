@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc">
+<title id="title">Taşkışla giriş cephesi</title><desc id="desc">İnce yeşil çizgilerle sade ön görünüş: sekiz sütun, balkon ve beş kemerli üst pencere.</desc>
+<circle cx="600" cy="420" r="125" fill="#bd6c3b" opacity=".055"/>
+<g fill="none" stroke="#7a8874" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+<!-- Level cornice and outer wall, without invented roof structures. -->
+<path d="M34 68H1166M34 83H1166M34 101H1166M34 113H1166M34 580H1166"/>
+<path d="M34 300H181M1019 300H1166M34 313H181M1019 313H1166M34 340H181M1019 340H1166"/>
+<defs>
+<g id="arch"><path d="M-27 45V-22A27 27 0 0 1 27-22V45Z"/><path d="M0-49V45M-27-13H27"/></g>
+<g id="side-window"><path d="M-43-49L0-65 43-49ZM-36-41H36M-26-33H26V63H-26ZM0-33V63M-26 14H26M-32 68H32"/></g>
+<g id="column" fill="#f6f5f0"><path d="M-14 0H14L17 233H-17ZM-22-10H22V0H-22ZM-20 233H20V241H-20ZM-25 241H25V250H-25Z"/></g>
+<g id="ground-window"><path d="M-25-44H25V49H-25ZM0-44V49M-25 2H25M-33-52H33M-32 57H32"/></g>
+</defs>
+<use href="#side-window" x="94" y="191"/>
+<use href="#side-window" x="222" y="191"/>
+<use href="#side-window" x="978" y="191"/>
+<use href="#side-window" x="1106" y="191"/>
+<use href="#arch" x="388" y="211"/>
+<use href="#arch" x="492" y="211"/>
+<use href="#arch" x="600" y="211"/>
+<use href="#arch" x="708" y="211"/>
+<use href="#arch" x="812" y="211"/>
+<path d="M295 147V257M309 147V257M290 140H314M293 147H311"/>
+<path d="M327 147V257M341 147V257M322 140H346M325 147H343"/>
+<path d="M433 147V257M447 147V257M428 140H452M431 147H449"/>
+<path d="M537 147V257M551 147V257M532 140H556M535 147H553"/>
+<path d="M649 147V257M663 147V257M644 140H668M647 147H665"/>
+<path d="M753 147V257M767 147V257M748 140H772M751 147H769"/>
+<path d="M859 147V257M873 147V257M854 140H878M857 147H875"/>
+<path d="M891 147V257M905 147V257M886 140H910M889 147H907"/>
+<path d="M183 266H1017V276H183ZM194 276V306M1006 276V306M183 306H1017V316H183Z"/>
+<path d="M218 280V301" stroke-width="1.6"/>
+<path d="M245 280V301" stroke-width="1.6"/>
+<path d="M272 280V301" stroke-width="1.6"/>
+<path d="M299 280V301" stroke-width="1.6"/>
+<path d="M326 280V301" stroke-width="1.6"/>
+<path d="M353 280V301" stroke-width="1.6"/>
+<path d="M380 280V301" stroke-width="1.6"/>
+<path d="M407 280V301" stroke-width="1.6"/>
+<path d="M434 280V301" stroke-width="1.6"/>
+<path d="M461 280V301" stroke-width="1.6"/>
+<path d="M488 280V301" stroke-width="1.6"/>
+<path d="M515 280V301" stroke-width="1.6"/>
+<path d="M542 280V301" stroke-width="1.6"/>
+<path d="M569 280V301" stroke-width="1.6"/>
+<path d="M596 280V301" stroke-width="1.6"/>
+<path d="M623 280V301" stroke-width="1.6"/>
+<path d="M650 280V301" stroke-width="1.6"/>
+<path d="M677 280V301" stroke-width="1.6"/>
+<path d="M704 280V301" stroke-width="1.6"/>
+<path d="M731 280V301" stroke-width="1.6"/>
+<path d="M758 280V301" stroke-width="1.6"/>
+<path d="M785 280V301" stroke-width="1.6"/>
+<path d="M812 280V301" stroke-width="1.6"/>
+<path d="M839 280V301" stroke-width="1.6"/>
+<path d="M866 280V301" stroke-width="1.6"/>
+<path d="M893 280V301" stroke-width="1.6"/>
+<path d="M920 280V301" stroke-width="1.6"/>
+<path d="M947 280V301" stroke-width="1.6"/>
+<path d="M974 280V301" stroke-width="1.6"/>
+<path d="M177 322H1023V336H177ZM185 336H1015V361H185ZM177 361H1023V370H177Z"/>
+<use href="#ground-window" x="88" y="479"/>
+<use href="#ground-window" x="198" y="479"/>
+<use href="#ground-window" x="1002" y="479"/>
+<use href="#ground-window" x="1112" y="479"/>
+<use href="#arch" x="388" y="493"/>
+<use href="#arch" x="492" y="493"/>
+<use href="#arch" x="708" y="493"/>
+<use href="#arch" x="812" y="493"/>
+<path d="M553 566V454A47 47 0 0 1 647 454V566M562 566V454A38 38 0 0 1 638 454V566M562 454H638M574 475H626V566H574ZM600 475V566"/>
+<use href="#column" x="220" y="380"/>
+<use href="#column" x="262" y="380"/>
+<use href="#column" x="382" y="380"/>
+<use href="#column" x="502" y="380"/>
+<use href="#column" x="698" y="380"/>
+<use href="#column" x="818" y="380"/>
+<use href="#column" x="938" y="380"/>
+<use href="#column" x="980" y="380"/>
+<path d="M187 630H1013M163 641H1037M138 652H1062M110 663H1090M445 679H755"/>
+<!-- Small ornamental marks echo the site's original illustration. -->
+<path d="M167 27H191M179 15V39M1020 26H1052M1036 10V42" stroke-width="1.8"/>
+</g></svg>

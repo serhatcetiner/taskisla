@@ -17,3 +17,5 @@
 .target-ring-back{stroke:#fffefa;stroke-width:9}
 .target-ring{stroke:#b45d36;stroke-width:4}
 .recommended-room .room-label{font-weight:800}
+
+.facade-art{display:block;width:100%;height:auto;border-radius:0;opacity:1}.building{padding-top:0}#exhausted{max-width:440px}#exhausted h2{font-size:24px;line-height:1.4}.medc-message{font-size:17px;line-height:1.7;margin:8px 0 24px}#exhausted-ok{border:0;border-radius:7px;padding:12px 24px;background:var(--ink);color:var(--white);font:600 14px inherit;width:100%}

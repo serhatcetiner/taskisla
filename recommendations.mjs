@@ -14,7 +14,7 @@ export function projectPriority(room){
   if(['131','134','136A','136B'].includes(room))return 6;
   if(['123A','123B','119A','119B'].includes(room))return 7;
   if(room==='333')return 8;
-  if(['217E','217F','217G'].includes(room))return 9;
+  if(['216A','216B','217E','217F','217G'].includes(room))return 9;
   if(['212','214'].includes(room))return 10;
   if(['217A','217B','217C','217D'].includes(room))return 11;
   if(['203A','203B','203C'].includes(room))return 12;
